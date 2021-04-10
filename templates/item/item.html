@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load humanize %}
+
+{% block content %}
+<div class="item-data">
+	{% if item %}
+	<img src="{{ item.itm_img.url }}" alt="" class="item-image"/>
+	<div class="item-info">
+		<h1 class="item-title">{{ item.itm_nme }}</h1>
+		<p class="item-category">{{ item.itm_ctgry }}</p>
+		<p class="item-sku-code">{{ item.itm_sku }}</p>
+		<p class="item-price">$ {{ item.itm_prc|intcomma }}</p>
+	</div>
+	<p class="item-description">{{ item.itm_desc }}</p>
+	{% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="all_branches_container">
+
+	{% for branch in branches %}
+	<div class="branch-container">
+		<p class="branch-country"> {{ branch.brnch_cntry }} </p>
+		<iframe frameborder="0" src="{{ branch.brnch_loc }}" scrolling="no"></iframe>
+		{% comment %}
+			<iframe src="{{ branch.brnch_loc }}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+		{% endcomment %}
+		<form action="#" class="branch-form" method="POST">
+			<input type="text" placeholder="Full Name."/>
+			<input type="email" placeholder="Valid E-Mail"/>
+			<textarea cols="50" rows="10" placeholder="Insert Yout Message."></textarea>
+			<input type="submit" value="Send"/>
+		</form>
+		<div class="branch-data">
+			<p><i class="fas fa-address-card"></i> {{ branch.brnch_nme }} </p>
+			<p><i class="fas fa-phone-square-alt"></i> {{ branch.brnch_phn }} </p>
+			<p><i class="fas fa-mobile"></i> {{ branch.brnch_mbl }} </p>
+			<a href="mailto:wddh.ahmd@gmail.com"><p><i class="fas fa-envelope"></i> {{ branch.brnch_eml }}</p></a>
+			<p>
+				<i class="fas fa-map-marked"></i>
+				{{ branch.brnch_strt }}, {{ branch.brnch_cty }}, {{ branch.brnch_stt }}, {{ branch.brnch_cntry }}.
+				{% if branch.brnch_bx %}
+				{{ branch.brnch_bx }}
+				{% endif %}
+			</p>
+		</div>
+	</div>
+	{% if branch != branches.last %}
+	<hr class="branch-divider"/>
+	{% endif %}
+	{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+@import base.sass
+
+
+ul.items-cards
+	width: 90%
+	margin: $spaceSizes3 auto
+	display: grid
+	gap: $spaceSizes3
+	grid-template-columns: repeat(5, 1fr)
+	li.item-card
+		width: 90%
+		padding: $spaceSizes04
+		background: $LightColor
+		margin: 0 auto
+		.view-pointer
+			cursor: pointer
+			img.item-card-image
+				width: 100%
+				height: 100px
+			.item-card-title
+				color: $DarkestColor
+				&:visited, &:link
+					color: $DarkestColor
+			.item-card-sku
+				color: $DarkestColor
+				&:visited, &:link
+					color: $DarkestColor
+				color: $DarkestColor
+			.item-card-price
+				color: $DarkestColor
+			.item-card-category
+				color: $DarkColor

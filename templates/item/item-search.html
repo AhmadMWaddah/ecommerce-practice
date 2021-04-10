@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load humanize %}
+
+{% block content %}
+<ul class="items-cards">
+	{% for item in searched_item %}
+	<li class="item-card">
+		<img src="{{ item.itm_img.url }}" alt="" class="item-card-image" />
+		<a class="item-card-title" href="{% url 'item' item.itm_sku %}"><p>{{ item.itm_nme }}</p></a>
+		<a class="item-card-sku" href="{% url 'item' item.itm_sku %}"><p>{{ item.itm_sku }}</p></a>
+		<p class="item-card-price">$ {{ item.itm_prc|intcomma }}</p>
+		<p class="item-card-category">{{ item.itm_ctgry }}</p>
+	</li>
+	{% endfor %}
+</ul>
+{% endblock %}

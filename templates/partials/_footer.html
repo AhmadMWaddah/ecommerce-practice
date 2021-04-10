@@ -1,0 +1,66 @@
+{% load static %}
+<div class="footer-section">
+	<div class="footer-info">
+		<a class="info-text" href="{% url 'index' %}"> WebyDevy </a>
+		<div class="info-address">
+			<i class="fas fa-map-marked"></i>
+			<p class="addrss">
+				<span class="street">266  Willow Oaks Lane</span>
+				<span class="city">Rayne</span>
+				<span class="state">LA</span>
+				<span class="country">Finland</span>
+				<span class="zipcode">70578</span>
+			</p>
+		</div>
+		<div class="info-tel">
+			<i class="fas fa-mobile"></i>
+			<p> +99 888 777 55 </p>
+		</div>
+		<div class="info-email">
+			<i class="fas fa-envelope"></i>
+			<p>
+				<a href="mailto:wddh.ahmd@gmail.com">wddh.ahmd@gmail.com</a>
+			</p>
+		</div>
+		<div class="info-contact">
+			<i class="fas fa-file-signature"></i>
+			<p>Send Us a <a href="{% url 'branches' %}">Message</a>.</p>
+		</div>
+	</div>
+	<div class="footer-menu">
+		<p>More Links</p>
+		<ul>
+			<li>
+				<a href="{% url 'terms' %}" class="terms-policy">Terms &amp; Conditions</a>
+			</li>
+			<li>
+				<a href="{% url 'refund' %}" class="refund-policy">Refund Policy</a>
+			</li>
+			<li>
+				<a href="{% url 'privacy' %}" class="privacy-policy">Privacy Policy</a>
+			</li>
+			<li>
+				<a href="{% url 'shipping' %}" class="shipping-policy">Shipping Policy</a>
+			</li>
+			<li>
+				<a href="{% url 'admin:index' %}" class="staff-policy">Staff Hub</a>
+			</li>
+			<li>
+				<a href="{% url 'sitemap' %}" class="sitemap-policy">Sitemap</a>
+			</li>
+		</ul>
+	</div>
+	<div class="footer-subscribe">
+		<div class="footer-input">
+			<p>Track Our Offers and News</p>
+			<form action="#" method="POST">
+				{% csrf_token %}
+				<input type="email" placeholder="E-Mail" />
+				<input type="submit" value="Subscribe" />
+			</form>
+			<div class="img-subscribe">
+				<img src="{% static 'imgs/logos/AMWLogo.png' %}" alt="AMW Logo"/>
+			</div>
+		</div>
+	</div>
+</div>

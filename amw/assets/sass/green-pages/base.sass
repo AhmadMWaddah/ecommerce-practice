@@ -1,0 +1,131 @@
+@import styl-utilities/_reset.sass
+@import styl-utilities/_variables.sass
+@import styl-utilities/_extends.sass
+@import styl-utilities/_mixin.sass
+
+body
+	width: $maxWidth
+	font-family: $FontFamily
+	display: grid
+	margin: 0 auto
+	grid-template-columns: repeat(12, 1fr)
+	grid-auto-rows: 40px 70px auto 200px 40px
+	grid-template-areas: "smbr smbr smbr smbr smbr smbr smbr smbr smbr smbr smbr smbr" "nvbr nvbr nvbr nvbr nvbr nvbr nvbr nvbr nvbr nvbr nvbr nvbr" "cntnt cntnt cntnt cntnt cntnt cntnt cntnt cntnt cntnt cntnt cntnt cntnt" "ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr" "cpyt cpyt cpyt cpyt cpyt cpyt cpyt cpyt cpyt cpyt cpyt cpyt"
+	.header-section
+		grid-area: smbr
+		background: $DarkestColor
+		@extend .inner-nav
+		.social-icons
+			display: flex
+			justify-content: space-around
+			@extend .top-header
+		.cart-icon
+			display: flex
+			justify-content: space-around
+			@extend .top-header
+		.accounts-icons
+			display: flex
+			justify-content: space-around
+			@extend .top-header
+			p
+				color: $NormalColor
+				font-size: $NormalFontSize
+				margin: $spaceSizes04
+	.navbar-section
+		grid-area: nvbr
+		background: $DarkColor
+		@extend .inner-nav
+		ul.nav-list
+			display: flex
+			place-items: center
+			li
+				margin: $spaceSizes02 $spaceSizes08				
+				a
+					color: $LightColor
+					font-size: $LargeFontSize
+		img.nav-image
+			width: 64px
+	/* ----------------------------- Body Content -------- */
+	.body-content
+		@extend .body-content-styles
+		
+	.footer-section
+		grid-area: ftr
+		background: $DarkColor
+		@extend .inner-nav
+		*
+			color: $LightColor
+			font-size: $SmallFontSize
+		.footer-info
+			display: flex
+			flex-direction: column
+			padding: $spaceSizes1
+			.info-text
+				padding: $spaceSizes02
+				text-align: center
+			.info-address
+				text-align: center
+				@extend .inner-nav
+				i
+					justify-self: left
+				p
+					span.street
+						display: inline-block
+						width: 100%
+			.info-tel
+				@extend .inner-nav
+				i
+					justify-self: left
+				p
+					width: 100%
+					text-align: center
+			.info-email
+				@extend .inner-nav
+				i
+					justify-self: left
+				p
+					width: 100%
+					text-align: center
+			.info-contact
+				@extend .inner-nav
+				i
+					justify-self: left
+				p
+					width: 100%
+					text-align: center
+		.footer-menu
+			display: flex
+			flex-direction: column
+			padding: $spaceSizes1
+			p
+				padding: $spaceSizes02
+				text-align: center
+			li
+				margin: $spaceSizes04
+		.footer-subscribe
+			padding: $spaceSizes1
+			display: flex
+			text-align: center
+			place-content: center
+			p
+				padding: $spaceSizes02
+				text-align: center
+			input[type=email]
+				width: 80%
+				margin: $spaceSizes02
+			input[type=submit]
+				width: 40%
+				margin: $spaceSizes02
+			.img-subscribe
+				text-align: center
+				img
+					width: 70px
+	.footer-copyrights
+		grid-area: cpyt
+		background: $DarkestColor
+		@extend .inner-nav
+		*
+			color: $NormalColor
+			font-size: $SmallFontSize
+		i
+			margin: $spaceSizes04	

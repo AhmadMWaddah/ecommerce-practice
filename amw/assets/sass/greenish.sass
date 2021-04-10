@@ -1,0 +1,565 @@
+@import styl-utilities/_reset.sass
+@import styl-utilities/_variables.sass
+@import styl-utilities/_extends.sass
+@import styl-utilities/_mixin.sass
+
+
+/* ----------------------------- Base Layout -------- */
+body
+	width: $maxWidth
+	font-family: $FontFamily
+	display: grid
+	margin: 0 auto
+	grid-template-columns: repeat(12, 1fr)
+	grid-auto-rows: 45px 70px auto 200px 45px
+	grid-template-areas: "smbr smbr smbr smbr smbr smbr smbr smbr smbr smbr smbr smbr" "nvbr nvbr nvbr nvbr nvbr nvbr nvbr nvbr nvbr nvbr nvbr nvbr" "cntnt cntnt cntnt cntnt cntnt cntnt cntnt cntnt cntnt cntnt cntnt cntnt" "ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr" "cpyt cpyt cpyt cpyt cpyt cpyt cpyt cpyt cpyt cpyt cpyt cpyt"
+	.header-section
+		grid-area: smbr
+		background: $DarkestColor
+		@extend .inner-nav
+		.social-icons
+			@extend .top-header
+			font-size: $MiniFontSize*2 !important
+			a
+				transition-property: transform
+				transition-duration: 350ms
+				transition-timing-function: ease-in-out
+				&:hover
+					transform: scale(1.5)
+					color: $LightestColor
+					*
+						color: $LightestColor
+		.cart-icon
+			@extend .top-header
+			transition-property: transform
+			transition-duration: 350ms
+			transition-timing-function: ease-in-out
+			&:hover
+				transform: scale(1.2)
+				*
+					color: $LightestColor
+		.accounts-icons
+			@extend .top-header
+			p
+				color: $NormalColor
+				font-size: $NormalFontSize
+				margin: $spaceSizes02 $spaceSizes04
+			a
+				transition-property: transform
+				transition-duration: 350ms
+				transition-timing-function: ease-in-out
+				&:hover
+					transform: scale(1.2)
+					color: $LightestColor
+					*
+						color: $LightestColor
+	.navbar-section
+		grid-area: nvbr
+		@extend .inner-nav
+		form
+			height: auto
+			position: relative
+			align-self: center
+			input[type=text]
+				color: $LightColor
+				font-weight: 600
+			.search-input
+				height: $spaceSizes04*4
+				padding: $spaceSizes08 ($spaceSizes08*2)
+				background: $NormalColor
+				&::placeholder
+					color: $LightColor
+					font-weight: bold
+			button
+				position: absolute
+				background: none
+				border: none
+				color: $LightColor
+				top: $spaceSizes02*3
+				left: $spaceSizes02*3
+		ul.nav-list
+			display: flex
+			place-items: center
+			li
+				margin: $spaceSizes02 $spaceSizes08
+				transition-property: transform
+				transition-duration: 350ms
+				transition-timing-function: ease-in-out
+				&:hover
+					transform: scale(1.2)
+					color: $LightestColor
+					*
+						color: $LightestColor
+				a
+					color: $LightColor
+					font-size: $LargeFontSize
+		img.nav-image
+			width: 64px
+	/* ----------------------------- Body Content -------- */
+	.body-content
+		@extend .body-content-styles
+/* ----------------------------- Footer Layout -------- */
+.footer-section
+	grid-area: ftr
+	background: $DarkColor
+	@extend .inner-nav
+	*
+		color: $LightColor
+		font-size: $SmallFontSize
+	.footer-info
+		display: flex
+		flex-direction: column
+		padding: $spaceSizes1
+		.info-text
+			padding: $spaceSizes02
+			text-align: center
+		.info-address
+			text-align: center
+			@extend .inner-nav
+			i
+				justify-self: left
+			p
+				span.street
+					display: inline-block
+					width: 100%
+		.info-tel
+			@extend .inner-nav
+			i
+				justify-self: left
+			p
+				width: 100%
+				text-align: center
+		.info-email
+			@extend .inner-nav
+			i
+				justify-self: left
+			p
+				width: 100%
+				text-align: center
+		.info-contact
+			@extend .inner-nav
+			i
+				justify-self: left
+			p
+				width: 100%
+				text-align: center
+				a
+					transition-property: font-size !important
+					transition-duration: 350ms !important
+					transition-timing-function: ease-in-out !important
+					&:hover
+						font-size: $SmallFontSize*1.2
+						color: $LightestColor
+	.footer-menu
+		display: flex
+		flex-direction: column
+		padding: $spaceSizes1
+		p
+			padding: $spaceSizes02
+			text-align: center
+		li
+			margin: $spaceSizes04
+			a
+				transition-property: font-size !important
+				transition-duration: 350ms !important
+				transition-timing-function: ease-in-out !important
+				&:hover
+					font-size: ($LargeFontSize - $MiniFontSize)
+					color: $LightestColor
+	.footer-subscribe
+		padding: $spaceSizes1
+		display: flex
+		text-align: center
+		place-content: center
+		p
+			padding: $spaceSizes02
+			text-align: center
+		input[type=email]
+			width: 80%
+			margin: $spaceSizes02
+			height: $spaceSizes04*4
+			padding: $spaceSizes08 ($spaceSizes08*2)
+			background: $NormalColor
+			font-weight: 900
+			&::placeholder
+				color: $LightColor
+				font-weight: 800
+		input[type=submit]
+			width: 40%
+			margin: $spaceSizes08 $spaceSizes04
+			background: $NormalColor
+			padding: $spaceSizes04
+			font-weight: 800
+			border: none
+			border-radius: $spaceSizes3
+			&:hover
+				background: $DarkestColor
+				color: $LightestColor
+		.img-subscribe
+			text-align: center
+			img
+				width: 70px
+.footer-copyrights
+	grid-area: cpyt
+	background: $DarkestColor
+	@extend .inner-nav
+	*
+		color: $NormalColor
+		font-size: $SmallFontSize
+	i
+		margin: $spaceSizes04
+/* ----------------------------- Home Layout -------- */
+/* Slideshow container */
+.slideshow-container
+	width: 90%
+	height: auto
+	margin: $spaceSizes3 auto
+	position: relative
+	/* Hide the images by default */
+	.mySlides
+		display: none
+		img
+			width: 100%
+			height: 600px
+		/* Caption text */
+		.text
+			color: $LightestColor
+			font-size: $MassiveFontSize
+			padding: $spaceSizes3
+			position: absolute
+			bottom: $spaceSizes3*2
+			left: 0
+			width: 100%
+			text-align: center
+	/* Fade For The Slide Show Images */
+	.fade
+		animation: $animename $animemove $animetime
+		-webkit-animation: $animename $animemove $animetime
+		-moz-animation: $animename $animemove $animetime
+		-o-animation: $animename $animemove $animetime
+		-ms-animation: $animename $animemove $animetime
+		@keyframes fade
+			@include keyframes(0.2, 0.4, 0.6, 0.8, 1)
+		@-moz-keyframes fade
+			@include keyframes(0.2, 0.4, 0.6, 0.8, 1)
+		@-webkit-keyframes fade
+			@include keyframes(0.2, 0.4, 0.6, 0.8, 1)
+		@-o-keyframes fade
+			@include keyframes(0.2, 0.4, 0.6, 0.8, 1)
+.about-word
+	width: 90%
+	height: auto
+	background: $NormalColor
+	margin: $spaceSizes3 auto
+	padding: $spaceSizes3
+	color: $LightestColor
+	display: grid
+	grid-gap: $spaceSizes3
+	grid-template-columns: repeat(2, 1fr)
+	grid-auto-rows: auto auto
+	grid-template-areas: "abouttitle abouttitle" "aboutword aboutimg"
+	place-items: center
+	place-content: center
+	.about-word-title
+		font-size: $LargeFontSize
+		padding: $spaceSizes08
+		color: $LightestColor
+		grid-area: abouttitle
+	.about-word-desc
+		grid-area: aboutword
+		font-size: $NormalFontSize
+		color: $LightColor
+		text-align: justify
+		padding: $spaceSizes3
+	.about-word-img
+		grid-area: aboutimg
+		width: 80% !important
+		height: 300px
+.our-services
+	width: 90%
+	margin: $spaceSizes08 auto
+	padding: $spaceSizes3
+	display: grid
+	grid-gap: $spaceSizes3
+	grid-template-columns: repeat(4, 1fr)
+	grid-template-areas: "servicetitle servicetitle servicetitle servicetitle" "service-one service-two service-three service-four"
+	grid-template-rows: auto auto
+	justify-self: space-evenly
+	align-items: center
+	.our-services-title
+		grid-area: servicetitle
+		text-align: center
+		font-size: $LargeFontSize
+	.service-one
+		grid-area: service-one
+		@extend .services-childs
+	.service-two
+		grid-area: service-two
+		@extend .services-childs
+	.service-three
+		grid-area: service-three
+		@extend .services-childs
+	.service-four
+		grid-area: service-four
+		@extend .services-childs
+.showcase-word
+	width: 90%
+	height: auto
+	background: $NormalColor
+	margin: $spaceSizes3 auto
+	padding: $spaceSizes3
+	color: $LightestColor
+	display: grid
+	grid-gap: $spaceSizes3
+	grid-template-columns: repeat(2, 1fr)
+	grid-auto-rows: auto auto
+	grid-template-areas: "showtitle showtitle" "showone showtwo"
+	place-items: center
+	place-content: center
+	.showcase-word-title
+		grid-area: showtitle
+		color: $LightestColor
+	.showcase-one
+		grid-area: showone
+		@extend .showcases-home
+	.showcase-two
+		grid-area: showtwo
+		@extend .showcases-home
+/* ----------------------------- About Layout -------- */
+.about-one
+	@extend .about-sec
+	grid-template-columns: 3fr 4fr
+	grid-template-areas: "abdes abimg"
+.about-two
+	@extend .about-sec
+	grid-template-columns: 4fr 3fr
+	grid-template-areas: "abimg abdes"
+.about-three
+	@extend .about-sec
+	grid-template-columns: 3fr 4fr
+	grid-template-areas: "abdes abimg"
+.about-four
+	@extend .about-sec
+	grid-template-columns: 4fr 3fr
+	grid-template-areas: "abimg abdes"
+.about-five
+	@extend .about-sec
+	grid-template-columns: 3fr 4fr
+	grid-template-areas: "abdes abimg"
+/* ----------------------------- ShowCases Layout -------- */
+ul.showcases-list
+	width: 90%
+	margin: $spaceSizes3 auto
+	display: grid
+	grid-gap: $spaceSizes3
+	grid-template-columns: repeat(3, 1fr)
+	li
+		padding: $spaceSizes1
+		border: 1px solid $DarkestColor
+		a
+			width: 100%
+			color: $DarkestColor
+			img
+				width: 100%
+			h3
+				padding: $spaceSizes1 $spaceSizes08
+			p
+				text-align: justify
+/* ----------------------------- Items Layout -------- */
+ul.items-cards
+	width: 90%
+	margin: $spaceSizes3 auto
+	display: grid
+	grid-gap: $spaceSizes3
+	grid-template-columns: repeat(5, 1fr)
+	li.item-card
+		width: 90%
+		padding: $spaceSizes04
+		background: $LightColor
+		margin: 0 auto
+		cursor: pointer
+		display: grid
+		place-items: center
+		place-content: center
+		.item-card-image
+			width: 100%
+			height: 100px
+		.item-card-title
+			color: $DarkestColor
+			&:visited, &:link
+				color: $DarkestColor
+		.item-card-sku
+			color: $DarkestColor
+			&:visited, &:link
+				color: $DarkestColor
+			color: $DarkestColor
+		.item-card-price
+			color: $DarkestColor
+		.item-card-category
+			color: $DarkColor
+/* ----------------------------- Item Layout -------- */
+.item-data
+	width: 90%
+	margin: $spaceSizes3 auto
+	display: grid
+	justify-content: center
+	gap: $spaceSizes3
+	text-align: center
+	grid-template-column: repeat(4, 1fr)
+	grid-template-rows: 600px 200px
+	grid-template-areas:"itmimg itmimg itminfo itminfo" "itmdesc itmdesc itmdesc itmdesc"
+	.item-image
+		grid-area: itmimg
+	.item-info
+		grid-area: itminfo
+		text-align: center
+		font-size: $HugeFontSize
+		display: grid
+		place-content: center
+		place-items: center
+	.item-description
+		grid-area: itmdesc
+		text-align: justify
+		font-size: $NormalFontSize
+/* ----------------------------- Branches Layout -------- */
+.all_branches_container
+	width: 90%
+	height: auto
+	margin: $spaceSizes3 auto
+	.branch-container
+		width: 100%
+		height: auto
+		padding-bottom: $spaceSizes3
+		display: grid
+		grid-gap: $spaceSizes1
+		grid-template-columns: 1fr 1fr
+		grid-auto-rows: 50px 300px 400px
+		grid-template-areas: "brnchcntry brnchcntry" "brnchmap brnchmap" "brnchform brnchcntct"
+		.branch-country
+			grid-area: brnchcntry
+			font-size: $HugeFontSize
+			text-align: center
+			//padding: $spaceSizes1 0
+		iframe
+			grid-area: brnchmap
+			@extend .contactus-iframe
+		form.branch-form
+			padding: $spaceSizes3 0
+			grid-area: brnchform
+			text-align: center
+			input[type=text], input[type=email], textarea
+				width: 80%
+				border: none
+				padding: $spaceSizes04
+				margin: $spaceSizes04 0
+				color: $DarkestColor
+				background: $LightColor
+				font-size: $NormalFontSize
+				&:focus
+					outline: none
+			input[type=submit]
+				width: 25%
+				padding: $spaceSizes04
+				margin: $spaceSizes08 0
+				color: $DarkestColor
+				background: $LightColor
+				font-size: $LargeFontSize
+		.branch-data
+			grid-area: brnchcntct
+			padding: $spaceSizes5
+			display: grid
+			align-items: center
+			p, a
+				text-align: justify
+				color: $DarkestColor
+				font-size: $LargeFontSize
+	.branch-divider
+		border-top: $spaceSizes02 dotted $DarkestColor
+		border-radius: $spaceSizes5
+		margin: $spaceSizes1 auto
+/* ----------------------------- Sign In Layout -------- */
+.sign-form-wrap
+	@extend .sign-form-wrap-class
+/* ----------------------------- Sign Up Layout -------- */
+.register-form-wrap
+	width: 90%
+	margin: 0 auto
+	text-align: center
+	.logo-img
+		width: 140px
+		margin: $spaceSizes04
+	.register-form
+		*
+			color: $LightColor
+		width: 60%
+		background: $NormalColor
+		margin: 0 auto $spaceSizes3
+		padding: $spaceSizes1
+		display: grid
+		grid-gap: $spaceSizes1
+		border: 4px dashed $DarkestColor
+		border-radius: 15px
+		input[type=submit]
+			width: 80px
+			height: $spaceSizes3
+			margin: $spaceSizes1 auto
+			color: $DarkestColor
+		.register-form-inputs
+			width: 100%
+			input[type=password], input[type=email], input[type=text], input[type=tel]
+				width: 300px
+				margin: $spaceSizes1
+				&::-moz-placeholder
+					color: $DarkColor
+					font-size: $NormalFontSize
+		.accept-terms, .go-sign
+			text-align: center
+/* ----------------------------- Not Found 404 Layout -------- */
+.not-found
+	background: radial-gradient(circle at center, $LightestColor 0%, $LightColor 50%, $NormalColor 100%)
+	width: 90%
+	height: auto
+	margin: 0 auto
+	padding: $spaceSizes1
+	display: grid
+	grid-gap: $spaceSizes1
+	*
+		color: $DarkestColor
+		text-align: center
+	h1
+		font-size: $MassiveFontSize*3
+		padding: $spaceSizes1
+	p
+		font-size: $LargeFontSize
+		padding: $spaceSizes1
+	a.not-found-link
+			font-size: $HugeFontSize
+			border-radius: $spaceSizes08
+			color: $LightColor
+			padding: $spaceSizes1
+/* ----------------------------- Terms Layout -------- */
+.body-content
+	@extend .policies-style
+/* ----------------------------- Refund Layout -------- */
+.body-content
+	@extend .policies-style
+/* ----------------------------- Privacy Layout -------- */
+.body-content
+	@extend .policies-style
+/* ----------------------------- Alerts Messages Layout -------- */
+.alert-danger
+	@extend .alert-msg
+	background: rgb(255, 153, 153) !important
+	color: rgb(102, 0, 0) !important
+.alert-info
+	@extend .alert-msg
+	background: rgb(153, 204, 255) !important
+	color: rgb(0, 51, 102) !important
+.alert-success
+	@extend .alert-msg
+	background: rgb(153, 255, 153) !important
+	color: rgb(0, 102, 0) !important
+.alert-warning
+	@extend .alert-msg
+	background: rgb(255, 255, 153) !important
+	color:  rgb(102, 102, 0) !important

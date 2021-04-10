@@ -1,0 +1,23 @@
+@import base.sass
+
+
+.item-data
+	width: 90%
+	margin: $spaceSizes3 auto
+	display: grid
+	gap: $spaceSizes3
+	grid-template-column: repeat(4, 1fr)
+	grid-template-rows: 600px 200px
+	grid-template-areas:"itmimg itmimg itminfo itminfo" "itmdesc itmdesc itmdesc itmdesc"
+	.item-image
+		grid-area: itmimg
+	.item-info
+		grid-area: itminfo
+		text-align: center
+		font-size: $HugeFontSize
+		display: grid
+		align-content: center
+	.item-description
+		grid-area: itmdesc
+		text-align: justify
+		font-size: $NormalFontSize

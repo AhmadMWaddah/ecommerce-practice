@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="sign-form-wrap">
+	<img src="{% static 'imgs/logos/AMWLogo.png' %}" alt="A.M.W Store Logo" class="logo-img"/>
+	<form class="sign-form" action="{% url 'login' %}" method="POST">
+		{% csrf_token %}
+		<h3>{{ form_title }}</h3>
+		<div class="sign-form-inputs">
+			<input type="email" placeholder="E-Mail.. " required/>
+			<input type="password" placeholder="Password.. " required/>
+		</div>
+		{% for field in login_form %}
+		<p>
+			{% for error in field.errors %}
+			<span style="color: red;">{{ error }}</span>
+			{% endfor %}
+		</p>
+		{% endfor %}
+		{% if login_form.non_field_errors %}
+		<p>{{ login_form.non_field_errors }}</p>
+		{% endif %}
+		<input type="submit" value="Sign In"/>
+	</form>
+</div>
+{% endblock %}

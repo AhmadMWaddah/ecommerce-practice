@@ -1,0 +1,159 @@
+// Top Header Section
+.top-header
+	display: flex
+	justify-content: space-around
+	*
+		color: $NormalColor
+	a
+		margin: $spaceSizes04
+		text-align: center
+		font-size: $SmallFontSize
+		i
+			font-size: $SmallFontSize
+// Nav Bar Section
+.inner-nav
+	width: 100%
+	background: $DarkColor
+	display: flex
+	justify-content: space-around
+	padding: $spaceSizes04
+// Body Content
+.body-content-styles
+	grid-area: cntnt
+	background: $LightestColor
+	color: $DarkestColor
+	height: auto
+	margin: 0 auto
+	padding: $spaceSizes1
+	width: 100vw
+	h1
+		text-align: center
+		padding: $spaceSizes1
+// Contact Us Page - Map
+.contactus-iframe
+	border: none
+	width: 100%
+	height: 300px
+// Contact Us Page - content
+.contact-info-style
+	display: grid
+	grid-auto-flow: column
+	place-items: center space-around
+	i
+		justify-self: left
+		margin: $spaceSizes1
+		width: $spaceSizes08
+
+	p
+		justify-self: left
+		margin: $spaceSizes1
+// Input Styles
+.input-styles
+	border: none
+	border-radius: 20px
+	padding: 10px
+	&::-moz-placeholder
+		color: $NormalColor
+		font-size: $NormalFontSize
+// Policies Pages Styles
+.policies-style
+	padding: $spaceSizes3 $spaceSizes5
+	h2, h3, h4
+		text-align: center
+		margin: $spaceSizes08
+	p
+		text-align: justify
+		margin: $spaceSizes04
+	*
+		color: $DarkestColor
+// Services Home Page
+.services-childs
+	text-align: center
+	p.services-ps
+		text-align: justify
+		padding: $spaceSizes04
+		margin: $spaceSizes1 0
+// Showcases Home Page
+.showcases-home
+	text-align: center
+	p.showcase-word-desc
+		padding:  $spaceSizes3
+		color: $LightColor
+		text-align: justify
+	img
+		width: 90%
+		height: 350px
+// About Us Page.
+.about-sec
+	width: 90%
+	height: 500px
+	margin: $spaceSizes3 auto
+	display: grid
+	grid-gap: $spaceSizes5
+	justify-content: space-evenly
+	align-items: center
+	img
+		grid-area: abimg
+		width: 100%
+		height:350px
+	p
+		grid-area: abdes
+		width: 100%
+		font-size: $NormalFontSize
+		text-align: justify
+		color: $DarkestColor
+		span
+			display: block
+			padding: $spaceSizes08 0
+			font-size: $LargeFontSize
+			color: $DarkColor
+// Sign In Up Pages
+.sign-form-wrap-class
+	width: 90%
+	margin: 0 auto
+	text-align: center
+	.logo-img
+		width: 140px
+		margin: $spaceSizes04
+	.sign-form
+		*
+			color: $LightColor
+		width: 60%
+		background: $NormalColor
+		margin: 0 auto $spaceSizes3
+		padding: $spaceSizes1
+		display: grid
+		grid-gap: $spaceSizes1
+		border: 4px dashed $DarkestColor
+		border-radius: 15px
+		input[type=submit]
+			width: 80px
+			height: $spaceSizes3
+			margin: $spaceSizes1 auto
+			color: $DarkestColor
+		.sign-form-inputs
+			width: 100%
+			input[type=password], input[type=email], input[type=text], input[type=tel]
+				width: 300px
+				margin: $spaceSizes1
+				&::-moz-placeholder
+					color: $DarkColor
+					font-size: $NormalFontSize
+// Alert Messages
+.alert-msg
+	padding: $spaceSizes1
+	font-weight: bold
+	border-radius: $spaceSizes3
+	display: block
+	transition: opacity 250ms
+	margin: $spaceSizes1
+	.close-msg
+		cursor: pointer
+		margin-left: $spaceSizes3
+		color: rgb(0, 0, 0) !important
+		font-weight: 600
+		float: right
+		font-size: $SmallFontSize  !important
+		transition: 0.3 !important
+		&:hover
+			color: rgb(105, 105, 105) !important

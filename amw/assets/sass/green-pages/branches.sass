@@ -1,0 +1,58 @@
+@import base.sass
+
+
+.all_branches_container
+	width: 90%
+	height: auto
+	margin: $spaceSizes3 auto
+	.branch-container
+		width: 100%
+		height: auto
+		padding-bottom: $spaceSizes3
+		display: grid
+		grid-gap: $spaceSizes1
+		grid-template-columns: 1fr 1fr
+		grid-auto-rows: 50px 300px 400px
+		grid-template-areas: "brnchcntry brnchcntry" "brnchmap brnchmap" "brnchform brnchcntct"
+		.branch-country
+			grid-area: brnchcntry
+			font-size: $HugeFontSize
+			text-align: center
+			//padding: $spaceSizes1 0
+		iframe
+			grid-area: brnchmap
+			@extend .contactus-iframe
+		form.branch-form
+			padding: $spaceSizes3 0
+			grid-area: brnchform
+			text-align: center
+			input[type=text], input[type=email], textarea
+				width: 80%
+				border: none
+				padding: $spaceSizes04
+				margin: $spaceSizes04 0
+				color: $DarkestColor
+				background: $LightColor
+				font-size: $NormalFontSize
+				&:focus
+					outline: none
+			input[type=submit]
+				width: 25%
+				padding: $spaceSizes04
+				margin: $spaceSizes08 0
+				color: $DarkestColor
+				background: $LightColor
+				font-size: $LargeFontSize
+		.branch-data
+			grid-area: brnchcntct
+			padding: $spaceSizes5
+			display: grid
+			align-items: center
+			p, a
+				text-align: justify
+				color: $DarkestColor
+				font-size: $LargeFontSize
+	.branch-divider
+		border-top: $spaceSizes02 dotted $DarkestColor
+		border-radius: $spaceSizes5
+		margin: $spaceSizes1 auto

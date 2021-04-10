@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% load static %
+
+{% block content %}
+<div class="not-found">
+	<h1 class="not-found-header">404</h1>
+	<p class="not-found-text">We are sorry, the page you are looking for it is not found.</p>
+	<a class="not-found-link" href="{% url 'index' %}">
+		<p>Home Page</p>
+	</a>
+</div>
+{% endblock %}

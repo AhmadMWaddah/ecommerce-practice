@@ -1,0 +1,36 @@
+@import base.sass
+
+
+.register-form-wrap
+	width: 90%
+	margin: 0 auto
+	text-align: center
+	.logo-img
+		width: 140px
+		margin: $spaceSizes04
+	.register-form
+		*
+			color: $LightColor
+		width: 60%
+		background: $NormalColor
+		margin: 0 auto $spaceSizes3
+		padding: $spaceSizes1
+		display: grid
+		grid-gap: $spaceSizes1
+		border: 4px dashed $DarkestColor
+		border-radius: 15px
+		input[type=submit]
+			width: 80px
+			height: $spaceSizes3
+			margin: $spaceSizes1 auto
+			color: $DarkestColor
+		.register-form-inputs
+			width: 100%
+			input[type=password], input[type=email], input[type=text], input[type=tel]
+				width: 300px
+				margin: $spaceSizes1
+				&::-moz-placeholder
+					color: $DarkColor
+					font-size: $NormalFontSize
+		.accept-terms, .go-sign
+			text-align: center

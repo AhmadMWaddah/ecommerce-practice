@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<!-- Block Content Start -->
+<!-- Carousel / Slider Start -->
+<div class="slideshow-container">
+
+	<!-- Full-width images with number and caption text -->
+	<div class="mySlides fade">
+		<img class="SlideImg" src="{% static 'imgs/1.jpg' %}"/>
+		<div class="text">Our Varity From Here</div>
+	</div>
+
+	<div class="mySlides fade">
+		<img class="SlideImg" src="{% static 'imgs/2.jpg' %}"/>
+		<div class="text">We Support You 24/7</div>
+	</div>
+
+	<div class="mySlides fade">
+		<img class="SlideImg" src="{% static 'imgs/3.jpg' %}"/>
+		<div class="text">Our Showcase</div>
+	</div>
+</div>
+<br/>
+<!-- The dots/circles -->
+<div style="text-align:center">
+	<span class="dot" onclick="currentSlide(1)"></span>
+	<span class="dot" onclick="currentSlide(2)"></span>
+	<span class="dot" onclick="currentSlide(3)"></span>
+</div>
+<!-- Carousel / Slider End -->
+
+
+<!-- About Us Words Start -->
+<div class="about-word">
+	<h2 class="about-word-title">Who We Are</h2>
+	<p class="about-word-desc">
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor ex qui magnam quasi deleniti amet vel enim quod exercitationem doloribus odio optio
+		eveniet
+		nesciunt, fugit nihil odit ullam repellendus ea repellat quidem veniam illo repudiandae asperiores, tempora? Possimus sed provident blanditiis quam
+		optio
+		fugit! Nulla ipsum illum minima blanditiis corporis dolor, labore aspernatur animi vitae veniam, ipsa itaque sunt, repellendus.
+	</p>
+	<img src="{% static 'imgs/AboutWordImg.jpg' %}" alt="About Us Word Section Image." class="about-word-img"/>
+</div>
+<!-- About Us Words End -->
+
+
+<!-- Our Services Start -->
+<div class="our-services">
+	<h2 class="our-services-title">Our Services</h2>
+	<div class="service-one">
+		<i class="fas fa-laptop-house fa-5x"></i>
+		<p class="services-ps">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, assumenda.</p>
+	</div>
+	<div class="service-two">
+		<i class="fas fa-user-tie fa-5x"></i>
+		<p class="services-ps">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, pariatur.</p>
+	</div>
+	<div class="service-three">
+		<i class="fas fa-chalkboard-teacher fa-5x"></i>
+		<p class="services-ps">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, dolores.</p>
+	</div>
+	<div class="service-four">
+		<i class="fas fa-business-time fa-5x"></i>
+		<p class="services-ps">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, id.</p>
+	</div>
+</div>
+<!-- Our Services End -->
+
+
+<!-- ShowCases Short Start -->
+<div class="showcase-word">
+	<h2 class="showcase-word-title"> Showcases </h2>
+	<div class="showcase-one">
+		<img src="{{ showcase1.shwcs_img.url }}" alt="ShowCases Projects Image." class="chowcase-word-img"/>
+		<p class="showcase-word-desc">{{ showcase1.shwcs_desc }}</p>
+	</div>
+	<div class="showcase-two">
+		<img src="{{ showcase2.shwcs_img.url }}" alt="ShowCases Projects Image." class="chowcase-word-img"/>
+		<p class="showcase-word-desc">{{ showcase2.shwcs_desc }}.</p>
+	</div>
+</div>
+<!-- ShowCases Short End -->
+{% endblock %}

@@ -1,0 +1,118 @@
+@import base.sass
+
+
+/* Slideshow container */
+.slideshow-container
+	width: 90%
+	height: auto
+	margin: $spaceSizes3 auto
+	position: relative
+	/* Hide the images by default */
+	.mySlides
+		display: none
+		img
+			width: 100%
+			height: 600px
+		/* Caption text */
+		.text
+			color: $LightestColor
+			font-size: $MassiveFontSize
+			padding: $spaceSizes3
+			position: absolute
+			bottom: $spaceSizes3*2
+			left: 0
+			width: 100%
+			text-align: center
+	/* Fade For The Slide Show Images */
+	.fade
+		animation: $animename $animemove $animetime
+		-webkit-animation: $animename $animemove $animetime
+		-moz-animation: $animename $animemove $animetime
+		-o-animation: $animename $animemove $animetime
+		-ms-animation: $animename $animemove $animetime
+		@keyframes fade
+			@include keyframes(0.2, 0.4, 0.6, 0.8, 1)
+		@-moz-keyframes fade
+			@include keyframes(0.2, 0.4, 0.6, 0.8, 1)
+		@-webkit-keyframes fade
+			@include keyframes(0.2, 0.4, 0.6, 0.8, 1)
+		@-o-keyframes fade
+			@include keyframes(0.2, 0.4, 0.6, 0.8, 1)
+.about-word
+	width: 90%
+	height: auto
+	background: $NormalColor
+	margin: $spaceSizes3 auto
+	padding: $spaceSizes3
+	color: $LightestColor
+	display: grid
+	grid-gap: $spaceSizes3
+	grid-template-columns: repeat(2, 1fr)
+	grid-auto-rows: auto auto
+	grid-template-areas: "abouttitle abouttitle" "aboutword aboutimg"
+	place-items: center
+	place-content: center
+	.about-word-title
+		font-size: $LargeFontSize
+		padding: $spaceSizes08
+		color: $LightestColor
+		grid-area: abouttitle
+	.about-word-desc
+		grid-area: aboutword
+		font-size: $NormalFontSize
+		color: $LightColor
+		text-align: justify
+		padding: $spaceSizes3
+	.about-word-img
+		grid-area: aboutimg
+		width: 80% !important
+		height: 300px
+.our-services
+	width: 90%
+	margin: $spaceSizes08 auto
+	padding: $spaceSizes3
+	display: grid
+	grid-gap: $spaceSizes3
+	grid-template-columns: repeat(4, 1fr)
+	grid-template-areas: "servicetitle servicetitle servicetitle servicetitle" "service-one service-two service-three service-four"
+	grid-template-rows: auto auto
+	justify-self: space-evenly
+	align-items: center
+	.our-services-title
+		grid-area: servicetitle
+		text-align: center
+		font-size: $LargeFontSize
+	.service-one
+		grid-area: service-one
+		@extend .services-childs
+	.service-two
+		grid-area: service-two
+		@extend .services-childs
+	.service-three
+		grid-area: service-three
+		@extend .services-childs
+	.service-four
+		grid-area: service-four
+		@extend .services-childs
+.showcase-word
+	width: 90%
+	height: auto
+	background: $NormalColor
+	margin: $spaceSizes3 auto
+	padding: $spaceSizes3
+	color: $LightestColor
+	display: grid
+	grid-gap: $spaceSizes3
+	grid-template-columns: repeat(2, 1fr)
+	grid-auto-rows: auto auto
+	grid-template-areas: "showtitle showtitle" "showone showtwo"
+	place-items: center
+	place-content: center
+	.showcase-word-title
+		grid-area: showtitle
+	.showcase-one
+		grid-area: showone
+		@extend .showcases-home
+	.showcase-two
+		grid-area: showtwo
+		@extend .showcases-home

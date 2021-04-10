@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<ul class="showcases-list">
+	{% for showcase in showcases %}
+	<li class="showcase-card">
+		<a href="#">
+			<img src="{{ showcase.shwcs_img.url }}" alt="" class="showcase-card-image">
+			<h3 class="showcase-card-title">{{ showcase.shwcs_nme }}</h3>
+			<p class="showcase-card-text">{{ showcase.shwcs_desc }}</p>
+		</a>
+	</li>
+	{% endfor %}
+</ul>
+<div class="pagination">
+    <span class="step-links">
+    {% if showcases.has_previous %}
+        <a href="?page=1">&laquo; first</a>
+        <a href="?page={{ showcases.previous_page_number }}">previous</a>
+    {% endif %}
+    <span class="current">
+        Page {{ showcases.number }} of {{ showcases.paginator.num_pages }}.
+    </span>
+    {% if showcases.has_next %}
+        <a href="?page={{ showcases.next_page_number }}">next</a>
+        <a href="?page={{ showcases.paginator.num_pages }}">last &raquo;</a>
+    {% endif %}
+    </span>
+</div>
+{% endblock %}

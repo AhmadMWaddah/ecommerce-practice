@@ -1,0 +1,28 @@
+{% load static %}
+<div class="navbar-section">
+	<img class="nav-image" src="{% static 'imgs/logos/AMWLogo.png' %}" alt="AMW Logo"/>
+	<form action="{% url 'item_search' %}" method="POST">
+		{% csrf_token %}
+		<input class="search-input" type="text" placeholder="Search">
+		<button type="submit">
+			<i class="fas fa-search"></i>
+		</button>
+	</form>
+	<ul class="nav-list">
+		<li class="nav-item">
+			<a href="{% url 'index' %}">Home</a>
+		</li>
+		<li class="nav-item">
+			<a href="{% url 'about' %}">About Us</a>
+		</li>
+		<li class="nav-item">
+			<a href="{% url 'showcases' %}">Showcases</a>
+		</li>
+		<li class="nav-item">
+			<a href="{% url 'items' %}">Shop</a>
+		</li>
+		<li class="nav-item">
+			<a href="{% url 'branches' %}">Contact Us</a>
+		</li>
+	</ul>
+</div>

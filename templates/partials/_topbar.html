@@ -1,0 +1,41 @@
+{% load static %}
+<div class="header-section">
+	<div class="social-icons">
+		<a href="https://www.linkedin.com/" class="linkedin" target="__blank">
+			<i class="fab fa-linkedin"></i>
+		</a>
+		<a href="https://www.facebook.com/" target="__blank">
+			<i class="fab fa-facebook-square"></i>
+		</a>
+		<a href="https://www.youtube.com/" target="__blank">
+			<i class="fab fa-youtube-square"></i>
+		</a>
+		<a href="https://twitter.com/" target="__blank">
+			<i class="fab fa-twitter-square"></i>
+		</a>
+		<a href="https://www.snapchat.com/" target="__blank">
+			<i class="fab fa-snapchat-square"></i>
+		</a>
+		<a href="https://www.reddit.com/" target="__blank">
+			<i class="fab fa-reddit-square"></i>
+		</a>
+		<a href="https://www.tumblr.com/" target="__blank">
+			<i class="fab fa-tumblr-square"></i>
+		</a>
+		<a href="https://www.behance.net/" target="__blank">
+			<i class="fab fa-behance-square"></i>
+		</a>
+	</div>
+	<div class="cart-icon">
+		<a href="{% url 'view_barrow' %}"> <i class="fas fa-luggage-cart"></i> 5 </a>
+	</div>
+	<div class="accounts-icons">
+		{% if request.user.email %}
+		<a href="{% url 'logout' %}"> Logout <i class="fas fa-sign-in-alt"></i></a>
+		{% else %}
+		<a href="{% url 'login' %}"> Login <i class="fas fa-sign-in-alt"></i></a>
+		<p class="Seprator"> / </p>
+		<a href="{% url 'register' %}"> Register <i class="fas fa-user-plus"></i></a>
+		{% endif %}
+	</div>
+</div>

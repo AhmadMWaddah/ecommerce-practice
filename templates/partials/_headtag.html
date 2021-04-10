@@ -1,0 +1,14 @@
+{% load static %}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous" />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet"> /
+{% if page %}
+<link rel="stylesheet" href="{% static 'css/greenish.css' %}" />
+<!-- To Change Into Dark Or Light Or Even Coloured Website Theme -->
+<!--<link rel="stylesheet" href="{% static 'css/'|add:page|add:'.css' %}" />-->
+{% endif %}
+<title>A.M.W Store | {{ page }}</title>
