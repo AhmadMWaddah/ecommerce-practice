@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="register-form-wrap">
+	<img src="{% static 'imgs/logos/AMWLogo.png' %}" alt="A.M.W Store Logo" class="logo-img"/>
+	<form class="register-form" action="{% url 'register' %}" method="POST">
+		{% csrf_token %}
+		<h3>{{ form_title }}</h3>
+		<div class="register-form-inputs">
+			<input name="first_name" type="text" placeholder="First Name.. "/>
+			{% if register_form.first_name.errors %}
+			<ul>
+				{% for error in register_form.first_name.errors %}
+				<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+			<input name="last_name" type="text" placeholder="Last Name.. "/>
+			{% if register_form.last_name.errors %}
+			<ul>
+				{% for error in register_form.last_name.errors %}
+				<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+			<input name="username" type="text" placeholder="UserName.. " required/>
+			{% if register_form.username.errors %}
+			<ul>
+				{% for error in register_form.username.errors %}
+				<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+			<input name="phone" type="tel" placeholder="Phone.. "/>
+			{% if register_form.phone.errors %}
+			<ul>
+				{% for error in register_form.phone.errors %}
+				<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+			<input name="email" type="email" placeholder="E-Mail.. " required/>
+			{% if register_form.email.errors %}
+			<ul>
+				{% for error in register_form.email.errors %}
+				<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+			<input name="password1" type="password" placeholder="Password.. " required/>
+			{% if register_form.password1.errors %}
+			<ul>
+				{% for error in register_form.password1.errors %}
+				<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+			<input name="password2" type="password" placeholder="Confirm Password.. " required/>
+			{% if register_form.password2.errors %}
+			<ul>
+				{% for error in register_form.password2.errors %}
+				<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+		</div>
+		<p class="go-sign">If you have an account Please <a href="{% url 'login' %}">Sign In</a> Page.</p>
+		<input type="submit" value="Sign Up"/>
+	</form>
+</div>
+{% endblock %}

@@ -5,30 +5,93 @@
 {% block content %}
 <div class="register-form-wrap">
 	<img src="{% static 'imgs/logos/AMWLogo.png' %}" alt="A.M.W Store Logo" class="logo-img"/>
-	<form class="register-form" action="{% url 'register' %}" method="POST">
+	<form class="register-form" action="" method="POST">
 		{% csrf_token %}
-		<h3>{{ form_title }}</h3>
+		<h3>{{ page }}</h3>
 		<div class="register-form-inputs">
-			<input name="first_name" type="text" placeholder="First Name.. "/>
-			<input name="last_name" type="text" placeholder="Last Name.. "/>
-			<input name="username" type="text" placeholder="UserName.. " required/>
-			<input name="phone" type="tel" placeholder="Phone.. "/>
-			<input name="email" type="email" placeholder="E-Mail.. " required/>
-			<input name="password1" type="password" placeholder="Password.. " required/>
-			<input name="password2" type="password" placeholder="Confirm Password.. " required/>
+
+			<label for="first_name">First Name</label><br />
+			{{ form_register.first_name }}<br />
+			{% if form_register.first_name.errors %}
+			<ul>
+				{% for error in form_register.first_name.errors %}
+				<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+
+			<label for="last_name">Last Name</label><br />
+			{{ form_register.last_name }}<br />
+			{% if form_register.last_name.errors %}
+			<ul>
+				{% for error in form_register.last_name.errors %}
+				<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+
+			<label for="username">User Name</label><br />
+			{{ form_register.username }}<br />
+			{% if form_register.username.errors %}
+			<ul>
+				{% for error in form_register.username.errors %}
+				<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+
+			<label for="email">E-Mail</label><br />
+			{{ form_register.email }}<br />
+			{% if form_register.email.errors %}
+			<ul>
+				{% for error in form_register.email.errors %}
+				<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+
+			<label for="mobile">Mobile</label><br />
+			{{ form_register.mobile }}<br />
+			{% if form_register.mobile.errors %}
+			<ul>
+				{% for error in form_register.mobile.errors %}
+				<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+
+			<label for="location">Location</label><br />
+			{{ form_register.location }}<br />
+			{% if form_register.location.errors %}
+			<ul>
+				{% for error in form_register.location.errors %}
+				<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+
+			<label for="password1">Password</label><br />
+			{{ form_register.password1 }}<br />
+			{% if form_register.password1.errors %}
+			<ul>
+				{% for error in form_register.password1.errors %}
+				<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+
+			<label for="password2">Confirm Password</label><br />
+			{{ form_register.password2 }}
+			{% if form_register.password2.errors %}
+			<ul>
+				{% for error in form_register.password2.errors %}
+				<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
 		</div>
-		{% for field in register_form %}
-		<p>
-			{% for error in field.errors %}
-			<span style="color: red;">{{ error }}</span>
-			{% endfor %}
-		</p>
-		{% endfor %}
-		{% if register_form.non_field_errors %}
-		<p>{{ register_form.non_field_errors }}</p>
-		{% endif %}
-		<p class="go-sign">If you have an account Please <a href="{% url 'login' %}">Sign In</a> Page.</p>
 		<input type="submit" value="Sign Up"/>
+		<p class="go-sign">If you Already have an account Please <a href="{% url 'login' %}">Sign In From Here</a>.</p>
 	</form>
 </div>
 {% endblock %}

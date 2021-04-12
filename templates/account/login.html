@@ -5,24 +5,28 @@
 {% block content %}
 <div class="sign-form-wrap">
 	<img src="{% static 'imgs/logos/AMWLogo.png' %}" alt="A.M.W Store Logo" class="logo-img"/>
-	<form class="sign-form" action="{% url 'login' %}" method="POST">
+	<form class="sign-form" action="" method="POST">
 		{% csrf_token %}
-		<h3>{{ form_title }}</h3>
+		<h3>{{ page }}</h3>
 		<div class="sign-form-inputs">
-			<input type="email" placeholder="E-Mail.. " required/>
-			<input type="password" placeholder="Password.. " required/>
+
+			<label for="email">E-Mail</label><br />
+			<input name="email" type="email" placeholder="E-Mail.. " required/><br />
+
+			<label for="password">Password</label><br />
+			<input name="password" type="password" placeholder="Password.. " required/><br />
+
+			{% if messages %}
+			<ul>
+				{% for msg in messages %}
+				<li>{{ msg }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+
 		</div>
-		{% for field in login_form %}
-		<p>
-			{% for error in field.errors %}
-			<span style="color: red;">{{ error }}</span>
-			{% endfor %}
-		</p>
-		{% endfor %}
-		{% if login_form.non_field_errors %}
-		<p>{{ login_form.non_field_errors }}</p>
-		{% endif %}
 		<input type="submit" value="Sign In"/>
+		<p class="go-sign">If you Don't have an account Please <a href="{% url 'login' %}">Sign Up From Here</a>.</p>
 	</form>
 </div>
 {% endblock %}
